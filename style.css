@@ -8,11 +8,9 @@ body{
     box-shadow: 0px 0px 30px #ccc;
     border-radius: 5px;
 }
-#login-section{
-    display: none;
-}
+
 #transaction-section{
-    display: block;
+    display: none;
 }
 
 .col-md-4{
