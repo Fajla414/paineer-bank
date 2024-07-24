@@ -1,55 +1,62 @@
-let form = document.getElementsByTagName('form');
-let emailInput = document.getElementById('email-input');
-let passInput = document.getElementById('password-input');
-let submitBtn = document.getElementById('submit');
-
-let depositvalue = document.getElementById('deposit-value');
-let withdrawvalue = document.getElementById('withdraw-value');
-let balancevalue = document.getElementById('balance-value');
-let depositInput = document.getElementById('deposit-input');
-let withdrawInput = document.getElementById('withdraw-input');
-let depositSubmit = document.getElementById('deposit-submit');
-let withdrawSubmit = document.getElementById('withdraw-submit');
-
-depositSubmit.addEventListener('click', function(even){
-    if(depositInput.value != ""){
-       if(depositvalue.innerHTML == '00'){
-        depositvalue.innerHTML = depositInput.value;
-        balancevalue.innerHTML = depositInput.value;
-
-        depositInput.value = "";
-       }
-       else{
-        depositvalue.innerHTML = parseInt(depositvalue.innerHTML) + parseInt(depositInput.value);
-        balancevalue.innerHTML = parseInt(balancevalue.innerHTML) + parseInt(depositInput.value)
-
-        depositInput.value = "";
-       }
+document.getElementById('login-btn').addEventListener('click', (event) => {
+    let emailInput = document.getElementById('email-input');
+    let passwordInput = document.getElementById('password-input');
+    if (emailInput.value != "" && passwordInput.value != "") {
+        let loginSection = document.getElementById('login-section');
+        let transactionSection = document.getElementById('transaction-section');
+        loginSection.style.display = 'none';
+        transactionSection.style.display = 'block';
+        event.preventDefault();
     }
-    else{
-        alert('Input something')
+    else {
+        alert('Login unsuccessful')
+        event.preventDefault();
     }
 })
 
-
-
-withdrawSubmit.addEventListener('click', function(event){
-    if(withdrawInput.value != ""){
-        if(withdrawvalue.innerHTML == '00'){
-            withdrawvalue.innerHTML = withdrawInput.value;
-            balancevalue.innerHTML = parseInt(balancevalue.innerHTML) - parseInt(withdrawInput.value);
-
-            withdrawInput.value = "";
-           }
-           else{
-            withdrawvalue.innerHTML = parseInt(withdrawvalue.innerHTML) + parseInt(withdrawInput.value);
-            balancevalue.innerHTML = parseInt(balancevalue.innerHTML) - parseInt(withdrawInput.value);
-
-            withdrawInput.value = "";
-           }
+document.getElementById('deposit-submit').addEventListener('click', (event) => {
+    let depositAmout = document.getElementById('deposit-amount');
+    let depositTotal = document.getElementById('deposit-total');
+    let balanceTotal = document.getElementById('balance-total');
+    if (depositAmout.value != "") {
+        if (depositTotal.innerHTML == "00") {
+            depositTotal.innerHTML = depositAmout.value;
+            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
+            emptyInputField();
+        }
+        else {
+            depositTotal.innerHTML = parseInt(depositTotal.innerHTML) + parseInt(depositAmout.value);
+            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
+            emptyInputField();
+        }
     }
-    else{
-        alert('Input something')
+    else {
+        alert('Deposit unsuccessful!')
     }
 })
 
+document.getElementById('withdraw-submit').addEventListener('click', (event) => {
+    let withdrawAmout = document.getElementById('withdraw-amount');
+    let withdrawTotal = document.getElementById('withdraw-total');
+    let balanceTotal = document.getElementById('balance-total');
+    if (withdrawAmout.value != "") {
+        if (withdrawTotal.innerHTML == '00') {
+            withdrawTotal.innerHTML = parseInt(withdrawAmout.value);
+            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
+            emptyInputField();
+        }
+        else {
+            withdrawTotal.innerHTML = parseInt(withdrawTotal.innerHTML) + parseInt(withdrawAmout.value);
+            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
+            emptyInputField();
+        }
+    }
+    else {
+        alert('withdraw unsuccessful!')
+    }
+})
+
+const emptyInputField = () => {
+    document.getElementById('withdraw-amount').value = "";
+    document.getElementById('deposit-amount').value = "";
+}

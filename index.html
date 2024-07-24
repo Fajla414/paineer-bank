@@ -8,7 +8,66 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    
+    <section id="login-section">
+        <h3 class="text-center my-5">Welcome to Pioneer Bank</h3>
+        <div class="container login-section p-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label"><h5>Login</h5></label>
+                          <input  type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                          <input type="password" class="form-control" id="password-input" placeholder="Password">
+                        </div><br>
+                        <button type="submit" class="btn btn-success" id="login-btn">Enter</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- transaction section -->
+     <section id="transaction-section" class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-2">
+                    <div class="inner-col-1 padding">
+                        <h4>Deposit</h4>
+                        <h1>$ <span id="deposit-total">00</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2">
+                    <div class="inner-col-2 padding">
+                        <h4>Withdraw</h4>
+                        <h1>$ <span id="withdraw-total">00</span></h1>
+                    </div>
+                </div>
+                <div class="col-md-4 my-2">
+                    <div class="inner-col-3 padding">
+                        <h4>Balance</h4>
+                        <h1>$ <span id="balance-total">1240</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 my-2">
+                    <div class="padding-2">
+                        <h3>Deposit</h3>
+                        <input id="deposit-amount" type="text" class="form-control" placeholder="$ amount you want to deposit"><br>
+                        <button id="deposit-submit" class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="padding-2">
+                        <h3>Withdraw</h3>
+                        <input id="withdraw-amount" type="text" class="form-control" placeholder="$ amount you want to withdraw"><br>
+                        <button id="withdraw-submit" class="btn btn-success">withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
 
    <script src="script.js"></script>
   </body>
