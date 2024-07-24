@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.container{
+    background-color:white;
+    box-shadow: 0px 0px 30px rgb(213, 213, 213);
+    width: 500px;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 10px 40px 30px 40px;
+}
+
+input{
+    width: 95%;
+   padding: 10px 10px;
+   border: 1px solid rgb(209, 209, 209);
+   border-radius: 3px;
+}
+
+button#submit{
+    border: none;
+}
+
+#submit a{
+    text-decoration: none;
+    border: none;
+    background: rgb(7, 132, 7);
+    padding: 9px 25px;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+#submit a:hover{
+    background-color: rgb(30, 96, 30);
+}
+
+.container-fluid{
+    margin: 50px auto;
+}
+
+.container-1{
+    display: flex;
+    justify-content: center;
+}
+
+#deposit{
+    background-color: darkblue;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    padding: 30px 50px 30px 30px;
+    width: 250px;
+}
+#withdraw{
+    background-color: tomato;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    padding: 30px 50px 30px 30px;
+    width: 250px;
+}
+#balance{
+    background-color: orange;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    padding: 30px 50px 30px 30px;
+    width: 250px;
+
+}
+.container-2{
+    display: flex;
+    justify-content: center;
+}
+
+#deposit-input-div{
+    margin: 10px 20px;
+    border-radius: 5px;
+    padding: 7px 50px 30px 30px;
+    width: 400px;
+    box-shadow: 5px 5px 30px rgb(213, 213, 213);
+   
+}
+
+#withdraw-input-div{
+    box-shadow: 0px 0px 30px rgb(213, 213, 213);
+    margin: 10px 20px;
+    border-radius: 5px;
+    padding: 7px 50px 30px 30px;
+    width: 400px;
+    box-shadow: 5px 5px 30px rgb(213, 213, 213);
+   
+}
+
+.btn{
+    border: none;
+    background: rgb(7, 132, 7);
+    padding: 9px 25px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background-color: rgb(30, 96, 30);
+}
