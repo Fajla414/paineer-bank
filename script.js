@@ -19,15 +19,20 @@ document.getElementById('deposit-submit').addEventListener('click', (event) => {
     let depositTotal = document.getElementById('deposit-total');
     let balanceTotal = document.getElementById('balance-total');
     if (depositAmout.value != "") {
-        if (depositTotal.innerHTML == "00") {
-            depositTotal.innerHTML = depositAmout.value;
-            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
-            emptyInputField();
+        if (depositAmout.value > 0) {
+            if (depositTotal.innerHTML == "00") {
+                depositTotal.innerHTML = depositAmout.value;
+                balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
+                emptyInputField();
+            }
+            else {
+                depositTotal.innerHTML = parseInt(depositTotal.innerHTML) + parseInt(depositAmout.value);
+                balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
+                emptyInputField();
+            }
         }
-        else {
-            depositTotal.innerHTML = parseInt(depositTotal.innerHTML) + parseInt(depositAmout.value);
-            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) + parseInt(depositAmout.value);
-            emptyInputField();
+        if (depositAmout.value < 0) {
+            alert('Negative value is not approval!')
         }
     }
     else {
@@ -40,15 +45,20 @@ document.getElementById('withdraw-submit').addEventListener('click', (event) => 
     let withdrawTotal = document.getElementById('withdraw-total');
     let balanceTotal = document.getElementById('balance-total');
     if (withdrawAmout.value != "") {
-        if (withdrawTotal.innerHTML == '00') {
-            withdrawTotal.innerHTML = parseInt(withdrawAmout.value);
-            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
-            emptyInputField();
+        if(withdrawAmout.value > 0){
+            if (withdrawTotal.innerHTML == '00') {
+                withdrawTotal.innerHTML = parseInt(withdrawAmout.value);
+                balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
+                emptyInputField();
+            }
+            else {
+                withdrawTotal.innerHTML = parseInt(withdrawTotal.innerHTML) + parseInt(withdrawAmout.value);
+                balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
+                emptyInputField();
+            }
         }
-        else {
-            withdrawTotal.innerHTML = parseInt(withdrawTotal.innerHTML) + parseInt(withdrawAmout.value);
-            balanceTotal.innerHTML = parseInt(balanceTotal.innerHTML) - parseInt(withdrawAmout.value);
-            emptyInputField();
+        if(withdrawAmout.value < 0){
+            alert('Negative value is not approval!')
         }
     }
     else {
